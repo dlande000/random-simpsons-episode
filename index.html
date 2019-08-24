@@ -62,6 +62,8 @@ $(document).ready(() => {
 
             let seasonInput = '<select name="seasons">';
             for (let seasonNum = 1; seasonNum < 31; seasonNum++) {
+                console.log(seasonNum);
+                console.log(seasonInput);
                 seasonInput.concat(`<option value=${seasonNum}>${seasonNum}</option>`)
             }
             seasonInput.concat('</select>');
