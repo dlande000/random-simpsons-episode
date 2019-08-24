@@ -3,7 +3,6 @@
  <head>
   <title>Random Simpsons Episode</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  </head>
  <body>
   <div>
@@ -11,7 +10,7 @@
     <h1>Random Simpsons Episode</h1>
     <br />
     <div>
-     <button type="button" name="load_episode" id="load_episode" class="btn btn-info">Pick episode</button>
+     <button type="button" name="load_episode" id="load_episode" class="btn btn-info">Load episode</button>
     </div>
     <br />
     <div id="episode_table">
@@ -19,6 +18,8 @@
    </div>
   </div>
  </body>
+ </html>
+ 
  <script>
 $(document).ready(() => {
     let seasonHash = {};
@@ -47,7 +48,7 @@ $(document).ready(() => {
             let episodeObj = {};
             for (let j = 0; j < headers.length; j++) {
                 if (episodeArr[j].includes("\comma")) {
-                    episodeArr[j] = episodeArr.split("\comma").join(" ");
+                    episodeArr[j] = episodeArr.split("\comma").join(",");
                 }
                 episodeObj[headers[j]] = episodeArr[j];
             }
@@ -73,4 +74,3 @@ $(document).ready(() => {
   }); 
 });
  </script>
-</html>
