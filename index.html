@@ -63,11 +63,12 @@ $(document).ready(() => {
             console.log(randomSeason);
             let randomEpNum = Math.floor(Math.random() * randomSeason.length)
             console.log(randomEpNum);
+            console.log(episodeHash);
             let randomEp = episodeHash[randomEpNum];
             console.log(randomEp);
             let episodeHTML = `<div>
                 <h2>${randomEp.Title}</h2>
-                <h4>Season ${episode.Season} Episode ${randomEp.Episode}</h4>
+                <h4>Season ${randomEp.Season} Episode ${randomEp.Episode}</h4>
                 <img src=${randomEp.Image}></img>
                 <p>${randomEp.Description}</p>
                 <p>Original airdate: ${randomEp.Airdate}</p>
