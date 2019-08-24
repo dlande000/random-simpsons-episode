@@ -36,7 +36,7 @@ def write_seasons( seasons ):
     file = open('simpsons_data.csv', 'wb')
     writer = csv.writer(file)
 
-    writer.writerow(['Season', 'Episode', 'Title', 'Airdate', 'Description', 'Image URL'])
+    writer.writerow(['Season', 'Episode', 'Title', 'Airdate', 'Description', 'Image'])
     for episodes in seasons:
         for episode in episodes:
             writer.writerow(episode)

@@ -11,10 +11,10 @@
     <h1>Random Simpsons Episode</h1>
     <br />
     <div>
-     <!-- <button type="button" name="load_data" id="load_data" class="btn btn-info">Pick episode</button> -->
+     <button type="button" name="load_episode" id="load_episode" class="btn btn-info">Pick episode</button>
     </div>
     <br />
-    <!-- <div id="employee_table"> -->
+    <div id="episode_table">
     </div>
    </div>
   </div>
@@ -46,49 +46,29 @@ $(document).ready(() => {
             }
             let episodeObj = {};
             for (let j = 0; j < headers.length; j++) {
-                if (episodeArr[i].includes("\comma")) {
-                    episodeArr[i] = episodeArr.split("\comma").join(" ");
+                if (episodeArr[j].includes("\comma")) {
+                    episodeArr[j] = episodeArr.split("\comma").join(" ");
                 }
-                episodeObj[headers[i]] = episodeArr[i];
+                episodeObj[headers[j]] = episodeArr[j];
             }
             episodeHash[episodeNum] = episodeObj;
         });
 
-        //   $('#load_data').click(function(){});
-
-        // for (let i = 1; i < episodeData.length; i++) {
-        //     if (!(seasonHash.hasOwnProperty(episodeData[i][0]))) {
-        //         seasonHash[episodeData[i]] = [episodeNum];
-        //     } else {
-        //         seasonHash[episodeData].push(episodeNum);
-        //     }
-        //     let episode = {};
-        //     episodeData[0].forEach((header, j) => {
-        //         episode[header] = episodeData[i][j];
-        //     });
-        //     episodeHash[episodeNum] = episode;
-        //     episodeNum++;
-        // }
-//     let table_data = '<table class="table table-bordered table-striped">';
-//     for(var count = 0; count<employee_data.length; count++)
-//     {
-//      var cell_data = employee_data[count].split(",");
-//      table_data += '<tr>';
-//      for(var cell_count=0; cell_count<cell_data.length; cell_count++)
-//      {
-//       if(count === 0)
-//       {
-//        table_data += '<th>'+cell_data[cell_count]+'</th>';
-//       }
-//       else
-//       {
-//        table_data += '<td>'+cell_data[cell_count]+'</td>';
-//       }
-//      }
-//      table_data += '</tr>';
-//     }
-//     table_data += '</table>';
-//     $('#employee_table').html(table_data);
+        $('#load_episode').click(function(){
+            let randomInt = (Math.floor(Math.random() * 30)) + 1;
+            let randomSeason = seasonHash[randomInt];
+            let randomEpNum = Math.floor(Math.random() * randomSeason.length)
+            let randomEp = episodeHash[randomEpNum];
+            let episode = `<div>
+                <h2>${episode.Title}</h2>
+                <h4>Season ${episode.Season} Episode ${episode.Episode}</h4>
+                <img src=${episode.Image}></img>
+                <p>${episode.Description}</p>
+                <p>Original airdate: ${episode.Airdate}</p>
+                <p>
+                </div>`
+            $('#episode_table').html(episode);
+        });
    }
   }); 
 });
