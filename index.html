@@ -33,16 +33,14 @@ $(document).ready(() => {
    success:function(data)
    {
     const episodeData = data.split(/\r?\n|\r/);
-    console.log("Episode data:")
-    console.log(episodeData);
         episodeData.forEach((episode, i) => {
             let episodeArr;
             if (i === 0) {
                 headers = episode.split(",");
-                console.log("Headers:")
-                console.log(headers)
             } else {
                 episodeArr = episode.split(",");
+                console.log('Episode arr:')
+                console.log(episodeArr);
                 if (!(seasonHash.hasOwnProperty(episodeArr[0]))) {
                     seasonHash[episodeArr[0]] = [episodeNum];
                 } else {
