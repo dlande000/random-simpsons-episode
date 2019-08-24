@@ -50,8 +50,8 @@ $(document).ready(() => {
                 }
                 let episodeObj = {};
                 for (let j = 0; j < headers.length; j++) {
-                    if (episodeArr[j].includes("\comma")) {
-                        episodeArr[j] = episodeArr[j].split("\comma").join(",");
+                    if (episodeArr[j].includes("\\comma")) {
+                        episodeArr[j] = episodeArr[j].split("\\comma").join(",");
                     }
                     episodeObj[headers[j]] = episodeArr[j];
                 }
@@ -63,7 +63,6 @@ $(document).ready(() => {
         let seasonInputs = () => {
             let seasonInput = '<select name="seasons">';
             for (let seasonNum = 1; seasonNum < 31; seasonNum++) {
-                const element = array[seasonNum];
                 seasonInput.concat(`<option value=${seaonNum}>${seasonNum}</option>`)
             }
             seasonInput.concat('</select>');
