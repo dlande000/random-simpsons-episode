@@ -27,17 +27,6 @@ $(document).ready(() => {
     let episodeNum = 1;
     let headers;
 
-    // const checkLastElement = array => {
-    //     console.log(array);
-    //     console.log(array[1]);
-    //     if (array[-1].length === 0) {
-    //         array.pop();
-    //         checkLastElement(array);
-    //     } else {
-    //         return array;
-    //     }
-    // }
-
   $.ajax({
    url:"simpsons_data.csv",
    dataType:"text",
@@ -63,6 +52,7 @@ $(document).ready(() => {
                     episodeObj[headers[j]] = episodeArr[j];
                 }
                 episodeHash[episodeNum] = episodeObj;
+                episodeNum++;
             }
         });
 
