@@ -61,7 +61,7 @@ $(document).ready(() => {
             console.log(randomInt);
             let randomSeason = seasonHash[randomInt];
             console.log(randomSeason);
-            let randomEpNum = Math.floor(Math.random() * randomSeason.length)
+            let randomEpNum = randomSeason[Math.floor(Math.random() * randomSeason.length)];
             console.log(randomEpNum);
             console.log(episodeHash);
             let randomEp = episodeHash[randomEpNum];
