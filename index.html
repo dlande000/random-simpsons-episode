@@ -68,9 +68,13 @@ $(document).ready(() => {
 
         $('#load_episode').click(function(){
             let randomInt = (Math.floor(Math.random() * 30)) + 1;
+            console.log(randomInt);
             let randomSeason = seasonHash[randomInt];
+            console.log(randomSeason);
             let randomEpNum = Math.floor(Math.random() * randomSeason.length)
+            console.log(randomEpNum);
             let randomEp = episodeHash[randomEpNum];
+            console.log(randomEp);
             let episodeHTML = `<div>
                 <h2>${randomEp.Title}</h2>
                 <h4>Season ${episode.Season} Episode ${randomEp.Episode}</h4>
