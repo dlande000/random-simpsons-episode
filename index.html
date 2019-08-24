@@ -33,10 +33,14 @@ $(document).ready(() => {
    success:function(data)
    {
     const episodeData = data.split(/\r?\n|\r/);
+    console.log("Episode data:")
+    console.log(episodeData);
         episodeData.forEach((episode, i) => {
             let episodeArr;
             if (i === 0) {
                 headers = episode.split(",");
+                console.log("Headers:")
+                console.log(headers)
             } else {
                 episodeArr = episode.split(",");
                 if (!(seasonHash.hasOwnProperty(episodeArr[0]))) {
@@ -54,6 +58,7 @@ $(document).ready(() => {
                 episodeObj[headers[j]] = episodeArr[j];
             }
             episodeHash[episodeNum] = episodeObj;
+            console.log(episodeObj)
         });
 
         $('#load_episode').click(function(){
