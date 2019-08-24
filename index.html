@@ -71,15 +71,15 @@ $(document).ready(() => {
             let randomSeason = seasonHash[randomInt];
             let randomEpNum = Math.floor(Math.random() * randomSeason.length)
             let randomEp = episodeHash[randomEpNum];
-            let episode = `<div>
-                <h2>${episode.Title}</h2>
-                <h4>Season ${episode.Season} Episode ${episode.Episode}</h4>
-                <img src=${episode.Image}></img>
-                <p>${episode.Description}</p>
-                <p>Original airdate: ${episode.Airdate}</p>
+            let episodeHTML = `<div>
+                <h2>${randomEp.Title}</h2>
+                <h4>Season ${episode.Season} Episode ${randomEp.Episode}</h4>
+                <img src=${randomEp.Image}></img>
+                <p>${randomEp.Description}</p>
+                <p>Original airdate: ${randomEp.Airdate}</p>
                 <p>
                 </div>`
-            $('#episode_table').html(episode);
+            $('#episode_table').html(episodeHTML);
         });
    }
   }); 
