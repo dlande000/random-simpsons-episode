@@ -33,7 +33,7 @@ def scrape_page( season_num ):
     return season_episodes
 
 def write_seasons( seasons ):
-    file = open('./assets/simpsons_data.csv', 'wb')
+    file = open('simpsons_data.csv', 'wb')
     writer = csv.writer(file)
 
     writer.writerow(['Season', 'Episode', 'Title', 'Airdate', 'Description', 'Image URL'])
@@ -44,7 +44,11 @@ def write_seasons( seasons ):
     file.close()
 
 def encode_text( txt ):
-    return txt.text.strip().encode('utf-8')
+    text = txt.text.strip()
+    if "," in text:
+        text = '\comma'.join(text.split(","))
+    
+    return text.encode('utf-8')
 
 def format_image_url( url ):
     return (url.split("_V1_")[0] + "_V1_.jpg").encode('utf-8')

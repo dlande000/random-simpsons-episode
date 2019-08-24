@@ -1,12 +1,15 @@
-// $(document).ready(function(){
-//  $('#load_data').click(function(){
-//   $.ajax({
-//    url:"employee.csv",
-//    dataType:"text",
-//    success:function(data)
-//    {
-//     var employee_data = data.split(/\r?\n|\r/);
-//     var table_data = '<table class="table table-bordered table-striped">';
+$(document).ready(() => {
+    let seasonHash = {};
+    let episodeHash = {};
+
+  $.ajax({
+   url:"simpsons_data.csv",
+   dataType:"text",
+   success:function(data)
+   {
+    const episodeData = data.split(/\r?\n|\r/);
+    console.log(episodeData);
+//     let table_data = '<table class="table table-bordered table-striped">';
 //     for(var count = 0; count<employee_data.length; count++)
 //     {
 //      var cell_data = employee_data[count].split(",");
@@ -26,8 +29,8 @@
 //     }
 //     table_data += '</table>';
 //     $('#employee_table').html(table_data);
-//    }
-//   });
-//  });
+   }
+  });
+//   $('#load_data').click(function(){});
  
-// });
+});

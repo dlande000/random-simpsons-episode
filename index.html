@@ -2,7 +2,7 @@
 <html>
  <head>
   <title>Random Simpsons Episode</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  </head>
  <body>
@@ -19,6 +19,70 @@
    </div>
   </div>
  </body>
-</html>
+ <script>
+$(document).ready(() => {
+    let seasonHash = {};
+    let episodeHash = {};
+    let episodeNum = 1;
+    let headers;
 
-<script src="simpsons.js"></script>
+  $.ajax({
+   url:"simpsons_data.csv",
+   dataType:"text",
+   success:function(data)
+   {
+    const episodeData = data.split(/\r?\n|\r/);
+        episodeData.forEach((episode, i) => {
+            let episodeArr;
+            if (i === 0) {
+                headers = episode.split(",");
+            } else {
+                episodeArr = episode.split(",");
+            }
+            let episodeObj = {
+                [headers[-1]]: episodeArr[-1],
+                [headers[0]]: episodeArr[0],
+                [headers[1]]: episodeArr[1],
+                [headers[2]]: episodeArr[2],
+            };
+        });
+        // for (let i = 1; i < episodeData.length; i++) {
+        //     if (!(seasonHash.hasOwnProperty(episodeData[i][0]))) {
+        //         seasonHash[episodeData[i]] = [episodeNum];
+        //     } else {
+        //         seasonHash[episodeData].push(episodeNum);
+        //     }
+        //     let episode = {};
+        //     episodeData[0].forEach((header, j) => {
+        //         episode[header] = episodeData[i][j];
+        //     });
+        //     episodeHash[episodeNum] = episode;
+        //     episodeNum++;
+        // }
+//     let table_data = '<table class="table table-bordered table-striped">';
+//     for(var count = 0; count<employee_data.length; count++)
+//     {
+//      var cell_data = employee_data[count].split(",");
+//      table_data += '<tr>';
+//      for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+//      {
+//       if(count === 0)
+//       {
+//        table_data += '<th>'+cell_data[cell_count]+'</th>';
+//       }
+//       else
+//       {
+//        table_data += '<td>'+cell_data[cell_count]+'</td>';
+//       }
+//      }
+//      table_data += '</tr>';
+//     }
+//     table_data += '</table>';
+//     $('#employee_table').html(table_data);
+   }
+  });
+//   $('#load_data').click(function(){});
+ 
+});
+ </script>
+</html>
