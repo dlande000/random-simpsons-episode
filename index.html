@@ -27,12 +27,21 @@ $(document).ready(() => {
     let episodeNum = 1;
     let headers;
 
+    const checkLastElement = array => {
+        if (array[-1].length === 0) {
+            array.pop();
+            checkLastElement(array);
+        } else {
+            return array;
+        }
+    }
+
   $.ajax({
    url:"simpsons_data.csv",
    dataType:"text",
    success:function(data)
    {
-    const episodeData = data.split(/\r?\n|\r/);
+    const episodeData = checkLastElement(data.split(/\r?\n|\r/));
         episodeData.forEach((episode, i) => {
             let episodeArr;
             if (i === 0) {
@@ -46,8 +55,6 @@ $(document).ready(() => {
                 }
                 let episodeObj = {};
                 for (let j = 0; j < headers.length; j++) {
-                    console.log(episodeArr);
-                    console.log(episodeArr[j]);
                     if (episodeArr[j].includes("\comma")) {
                         episodeArr[j] = episodeArr[j].split("\comma").join(",");
                     }
