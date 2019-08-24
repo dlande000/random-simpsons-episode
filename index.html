@@ -28,6 +28,8 @@ $(document).ready(() => {
     let headers;
 
     const checkLastElement = array => {
+        console.log(array);
+        console.log(array[-1]);
         if (array[-1].length === 0) {
             array.pop();
             checkLastElement(array);
