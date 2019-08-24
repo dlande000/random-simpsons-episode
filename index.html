@@ -19,7 +19,7 @@
   </div>
  </body>
  </html>
- 
+
  <script>
 $(document).ready(() => {
     let seasonHash = {};
@@ -45,6 +45,7 @@ $(document).ready(() => {
                     seasonHash[episodeArr[0]].push(episodeNum);
                 }
             }
+            console.log(episodeArr);
             let episodeObj = {};
             for (let j = 0; j < headers.length; j++) {
                 if (episodeArr[j].includes("\comma")) {
