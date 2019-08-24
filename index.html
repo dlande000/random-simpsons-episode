@@ -39,24 +39,20 @@ $(document).ready(() => {
                 headers = episode.split(",");
             } else {
                 episodeArr = episode.split(",");
-                console.log('Episode arr:')
-                console.log(episodeArr);
                 if (!(seasonHash.hasOwnProperty(episodeArr[0]))) {
                     seasonHash[episodeArr[0]] = [episodeNum];
                 } else {
                     seasonHash[episodeArr[0]].push(episodeNum);
                 }
-            }
-            console.log(episodeArr);
-            let episodeObj = {};
-            for (let j = 0; j < headers.length; j++) {
-                if (episodeArr[j].includes("\comma")) {
-                    episodeArr[j] = episodeArr.split("\comma").join(",");
+                let episodeObj = {};
+                for (let j = 0; j < headers.length; j++) {
+                    if (episodeArr[j].includes("\comma")) {
+                        episodeArr[j] = episodeArr.split("\comma").join(",");
+                    }
+                    episodeObj[headers[j]] = episodeArr[j];
                 }
-                episodeObj[headers[j]] = episodeArr[j];
+                episodeHash[episodeNum] = episodeObj;
             }
-            episodeHash[episodeNum] = episodeObj;
-            console.log(episodeObj)
         });
 
         $('#load_episode').click(function(){
