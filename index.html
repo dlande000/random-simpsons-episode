@@ -63,10 +63,11 @@ $(document).ready(() => {
         let inputSeasons = () => {
             let seasonInput = '<select name="seasons">';
             for (let seasonNum = 1; seasonNum < 31; seasonNum++) {
-                console.log("Is this working?")
+                console.log("Is this working NOW???")
                 console.log(seasonNum);
                 console.log(seasonInput);
                 let toConcat = "<option value=" + seasonNum + ">" + seasonNum + "</option>";
+                console.log(toConcat);
                 seasonInput.concat(toConcat)
             }
             return seasonInput.concat('</select>');
