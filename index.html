@@ -60,17 +60,20 @@ $(document).ready(() => {
             }
         });
 
+        let inputSeasons = () => {
             let seasonInput = '<select name="seasons">';
             for (let seasonNum = 1; seasonNum < 31; seasonNum++) {
+                console.log("Is this working?")
                 console.log(seasonNum);
                 console.log(seasonInput);
                 let toConcat = `<option value=${seasonNum}>${seasonNum}</option>`;
                 seasonInput.concat(toConcat)
             }
-            seasonInput.concat('</select>');
+            return seasonInput.concat('</select>');
+        };
 
-        $('#lower_seasons').html(seasonInput);
-        $('#upper_seasons').html(seasonInput);
+        $('#lower_seasons').html(inputSeasons());
+        $('#upper_seasons').html(inputSeasons());
 
         $('#load_episode').click(function(){
             let randomInt = (Math.floor(Math.random() * 30)) + 1;
