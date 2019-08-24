@@ -47,7 +47,7 @@ $(document).ready(() => {
                 let episodeObj = {};
                 for (let j = 0; j < headers.length; j++) {
                     if (episodeArr[j].includes("\comma")) {
-                        episodeArr[j] = episodeArr.split("\comma").join(",");
+                        episodeArr[j] = episodeArr[j].split("\comma").join(",");
                     }
                     episodeObj[headers[j]] = episodeArr[j];
                 }
