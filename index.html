@@ -38,14 +38,24 @@ $(document).ready(() => {
                 headers = episode.split(",");
             } else {
                 episodeArr = episode.split(",");
+                if (!(seasonHash.hasOwnProperty(episodeArr[0]))) {
+                    seasonHash[episodeArr[0]] = [episodeNum];
+                } else {
+                    seasonHash[episodeArr[0]].push(episodeNum);
+                }
             }
-            let episodeObj = {
-                [headers[-1]]: episodeArr[-1],
-                [headers[0]]: episodeArr[0],
-                [headers[1]]: episodeArr[1],
-                [headers[2]]: episodeArr[2],
-            };
+            let episodeObj = {};
+            for (let j = 0; j < headers.length; j++) {
+                if (episodeArr[i].includes("\comma")) {
+                    episodeArr[i] = episodeArr.split("\comma").join(" ");
+                }
+                episodeObj[headers[i]] = episodeArr[i];
+            }
+            episodeHash[episodeNum] = episodeObj;
         });
+
+        //   $('#load_data').click(function(){});
+
         // for (let i = 1; i < episodeData.length; i++) {
         //     if (!(seasonHash.hasOwnProperty(episodeData[i][0]))) {
         //         seasonHash[episodeData[i]] = [episodeNum];
@@ -80,9 +90,7 @@ $(document).ready(() => {
 //     table_data += '</table>';
 //     $('#employee_table').html(table_data);
    }
-  });
-//   $('#load_data').click(function(){});
- 
+  }); 
 });
  </script>
 </html>
