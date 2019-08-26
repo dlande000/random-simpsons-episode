@@ -91,7 +91,7 @@ $(document).ready(() => {
                 max = firstSeason;
             }
 
-            let randomInt = (Math.floor(Math.random() * max)) + min;
+            let randomInt = (Math.floor(Math.random() * (max - min + 1))) + min;
             let randomSeason = seasonHash[randomInt];
             let randomEpNum = randomSeason[Math.floor(Math.random() * randomSeason.length)];
             let randomEp = episodeHash[randomEpNum];
