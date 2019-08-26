@@ -61,16 +61,17 @@ $(document).ready(() => {
         });
 
         let inputSeasons = () => {
-            let seasonInput = '<select name="seasons">';
+            let seasonInput = ['<select name="seasons">'];
             for (let seasonNum = 1; seasonNum < 31; seasonNum++) {
                 console.log("Is this working NOW???")
                 console.log(seasonNum);
                 console.log(seasonInput);
-                let toConcat = "<option value=" + seasonNum + ">" + seasonNum + "</option>";
-                console.log(toConcat);
-                seasonInput.concat(toConcat)
+                let toPush = "<option value=" + seasonNum + ">" + seasonNum + "</option>";
+                console.log(toPush);
+                seasonInput.push(toPush)
             }
-            return seasonInput.concat('</select>');
+            seasonInput.push('</select>');
+            return seasonInput.join('');
         };
 
         $('#lower_seasons').html(inputSeasons());
