@@ -1,0 +1,32 @@
+h1, h2, h3, h4, h5, h6, a, p {
+    /* font-family: 'Trebuchet MS'; */
+    font-family: 'Rock Salt', cursive;
+}
+
+html {
+    width: 100%;
+    background-image: url("https://images.wikia.nocookie.net/__cb46/simpsons/images/5/50/Wiki-background");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+body {
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 13px;
+}
+
+#header-image {
+    width: 500px;
+}
+
+#header-text {
+    float: right;
+    position: relative;
+    top: -14px;
+}
+
+h1 {
+    margin-bottom: -40px;
+}
