@@ -1,4 +1,4 @@
-h1, h4, {
+h1, h4 {
     font-family: 'Rock Salt', cursive;
 }
 
@@ -12,6 +12,11 @@ html {
     background-attachment: fixed;
     background-position: center; 
     background-repeat: repeat-y;
+}
+
+#episode-table {
+    padding-top: 50px;
+    padding-bottom: 45px;
 }
 
 body {
@@ -52,10 +57,10 @@ footer {
     margin: 0 auto;
 }
 
-.episode-table {
-    padding: 45px;
+.episode-screenshot {
+    max-width: 600px;
 }
 
-#episode-screenshot {
-    width: 600px;
+#donut-gif {
+    margin-left: 120px;
 }
