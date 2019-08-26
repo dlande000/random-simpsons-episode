@@ -79,7 +79,7 @@ $(document).ready(() => {
                     <p>Original airdate: ${randomEp.Airdate}</p>
                     </div>`;
                 
-                $('#episode_table').html(episodeHTML);
+                $('#episode-table').html(episodeHTML);
                 });
             }
     }); 
