@@ -1,6 +1,9 @@
-h1, h2, h3, h4, h5, h6, a, p {
-    /* font-family: 'Trebuchet MS'; */
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Rock Salt', cursive;
+}
+
+a, p {
+    font-family: 'Tahoma';
 }
 
 html {
@@ -29,4 +32,26 @@ body {
 
 h1 {
     margin-bottom: -40px;
+}
+
+.centered {
+    text-align: center;
+}
+
+footer {
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+.range-and-episode {
+    width: 700px;
+    display: inline-flex;
+}
+
+.range-and-episode > p {
+    margin: 0 auto;
+}
+
+.donut-gif {
+    padding: 10px;
 }
