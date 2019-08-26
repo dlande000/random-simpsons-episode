@@ -72,9 +72,9 @@ $(document).ready(() => {
                 let randomEp = episodeHash[randomEpNum];
 
                 let episodeHTML = `<div>
-                    <h2>${randomEp.Title}</h2>
+                    <h3>${randomEp.Title}</h3>
                     <h4>Season ${randomEp.Season} Episode ${randomEp.Episode}</h4>
-                    <img src=${randomEp.Image}></img>
+                    <img class="episode-screenshot" src=${randomEp.Image}></img>
                     <p>${randomEp.Description}</p>
                     <p>Original airdate: ${randomEp.Airdate}</p>
                     <p>

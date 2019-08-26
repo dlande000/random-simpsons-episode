@@ -1,17 +1,18 @@
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5, h6 {
     font-family: 'Rock Salt', cursive;
 }
 
-a, p {
+h3, a, p {
     font-family: 'Tahoma';
 }
 
 html {
     width: 100%;
-    background-image: url("https://images.wikia.nocookie.net/__cb46/simpsons/images/5/50/Wiki-background");
-    background-repeat: no-repeat;
+    background-image: url("./assets/sky-background.jpg");
+    /* background-repeat: no-repeat; */
     background-attachment: fixed;
     background-position: center; 
+    background-repeat: repeat-y;
 }
 
 body {
@@ -52,6 +53,10 @@ footer {
     margin: 0 auto;
 }
 
-.donut-gif {
-    padding: 10px;
+.episode-table {
+    padding: 45px;
+}
+
+#episode-screenshot {
+    width: 600px;
 }
