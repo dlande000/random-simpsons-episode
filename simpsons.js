@@ -73,11 +73,10 @@ $(document).ready(() => {
 
                 let episodeHTML = `<div>
                     <h3>${randomEp.Title}</h3>
-                    <h4>Season ${randomEp.Season} Episode ${randomEp.Episode}</h4>
+                    <h5>Season ${randomEp.Season} Episode ${randomEp.Episode}</h5>
                     <img class="episode-screenshot" src=${randomEp.Image}></img>
                     <p>${randomEp.Description}</p>
                     <p>Original airdate: ${randomEp.Airdate}</p>
-                    <p>
                     </div>`
                 
                 $('#episode_table').html(episodeHTML);

@@ -1,15 +1,14 @@
-h1, h2, h4, h5, h6 {
+h1, h4, {
     font-family: 'Rock Salt', cursive;
 }
 
-h3, a, p {
+h3, h5, a, p {
     font-family: 'Tahoma';
 }
 
 html {
     width: 100%;
     background-image: url("./assets/sky-background.jpg");
-    /* background-repeat: no-repeat; */
     background-attachment: fixed;
     background-position: center; 
     background-repeat: repeat-y;
