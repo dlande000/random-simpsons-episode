@@ -8,7 +8,7 @@
   <div>
    <div>
     <h1>Random Simpsons Episode</h1>
-    <br />
+    <h2>Select a range of seasons and generate a random Simpsons episode.</h2>
     <div id="lower_seasons">
     </div>
     <div id="upper_seasons">
@@ -16,7 +16,6 @@
     <div>
      <button type="button" name="load_episode" id="load_episode" class="btn btn-info">Load episode</button>
     </div>
-    <br />
     <div id="episode_table">
     </div>
    </div>
@@ -75,8 +74,8 @@ $(document).ready(() => {
             return seasonInput.join('');
         };
 
-        $('#lower_seasons').html(inputSeasons(position1));
-        $('#upper_seasons').html(inputSeasons(position2));
+        $('#lower_seasons').html(inputSeasons("position1"));
+        $('#upper_seasons').html(inputSeasons("position2"));
 
         $('#load_episode').click(function(){
             let randomInt = (Math.floor(Math.random() * 30)) + 1;
