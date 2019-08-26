@@ -49,8 +49,10 @@ footer {
 }
 
 .range-and-episode {
-    width: 700px;
-    display: inline-flex;
+    width: 400px;
+    display: flex;
+    position: relative;
+    left: 130px;
 }
 
 .range-and-episode > p {
@@ -67,4 +69,8 @@ footer {
     margin-left: 110px;
     border: 3px solid white;
     border-radius: 1px;
+}
+
+button {
+    margin-left: 20px;
 }
