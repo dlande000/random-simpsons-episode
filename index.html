@@ -60,22 +60,23 @@ $(document).ready(() => {
             }
         });
 
-        let inputSeasons = () => {
+        let inputSeasons = (position) => {
             let seasonInput = ['<select name="seasons">'];
             for (let seasonNum = 1; seasonNum < 31; seasonNum++) {
-                console.log("Is this working NOW???")
-                console.log(seasonNum);
-                console.log(seasonInput);
-                let toPush = "<option value=" + seasonNum + ">" + seasonNum + "</option>";
-                console.log(toPush);
+                let toPush;
+                if ((position === "position1" && seasonNum === 1) || (position === "position2" && seasonNum === 10)) {
+                    toPush = "<option selected value=" + seasonNum + ">" + seasonNum + "</option>";
+                } else {
+                    toPush = "<option value=" + seasonNum + ">" + seasonNum + "</option>";
+                }
                 seasonInput.push(toPush)
             }
             seasonInput.push('</select>');
             return seasonInput.join('');
         };
 
-        $('#lower_seasons').html(inputSeasons());
-        $('#upper_seasons').html(inputSeasons());
+        $('#lower_seasons').html(inputSeasons(position1));
+        $('#upper_seasons').html(inputSeasons(position2));
 
         $('#load_episode').click(function(){
             let randomInt = (Math.floor(Math.random() * 30)) + 1;
