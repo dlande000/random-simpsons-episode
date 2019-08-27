@@ -25,7 +25,7 @@ $(document).ready(() => {
                 let episodeObj = {};
                 for (let j = 0; j < headers.length; j++) {
                     console.log(episodeArr);
-                    console.log(epsideArr[j]);
+                    console.log(episodeArr[j]);
                     if (episodeArr[j].includes("\\comma")) {
                         episodeArr[j] = episodeArr[j].split("\\comma").join(",");
                     }
