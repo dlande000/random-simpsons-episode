@@ -47,6 +47,8 @@ def encode_text( txt ):
     text = txt.text.strip()
     if "," in text:
         text = '\comma'.join(text.split(","))
+    if "\"" in text:
+        text = ''.join(text.split('\"'))
     
     return text.encode('utf-8')
 
