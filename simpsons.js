@@ -71,7 +71,7 @@ $(document).ready(() => {
                 let randomEpNum = randomSeason[Math.floor(Math.random() * randomSeason.length)];
                 let randomEp = episodeHash[randomEpNum];
 
-                let episodeHTML = `<div>
+                let episodeHTML = `<div class="centered">
                     <h3>${randomEp.Title}</h3>
                     <h5>Season ${randomEp.Season} Episode ${randomEp.Episode}</h5>
                     <img class="episode-screenshot" src=${randomEp.Image}></img>
