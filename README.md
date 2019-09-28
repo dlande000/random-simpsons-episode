@@ -2,11 +2,11 @@
 
 ### Overview
 
-[Pitt, The Elder Live](http://www.davidanderson.nyc/random-simpsons-episode)
+[Pitt, the Elder Live](http://www.davidanderson.nyc/random-simpsons-episode)
 
 ![screenshot](./assets/screenshot1.png)
 
-Pitt, The Elder takes a range of seasons for the TV show 'The Simpsons' and returns the title, airdate, and description of a randomly selected episode. 
+Pitt, the Elder takes a range of seasons for the TV show 'The Simpsons' and returns the title, airdate, and description of a randomly selected episode. 
 
 ![screenshot2](./assets/screenshot2.png)
 
