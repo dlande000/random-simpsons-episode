@@ -52,7 +52,7 @@ $(document).ready(() => {
             $('#lower_seasons').html(inputSeasons("position1"));
             $('#upper_seasons').html(inputSeasons("position2"));
 
-            $('#load_episode').click(function(){
+            $('#load_episode').click(() => {
                 let firstSeason = Number($('#lower_seasons option:selected').text());
                 let secondSeason = Number($('#upper_seasons option:selected').text());
                 let min;
