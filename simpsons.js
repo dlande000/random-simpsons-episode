@@ -10,6 +10,7 @@ $(document).ready(() => {
         success:function(data)
         {
             const episodeData = data.split(/\r?\n|\r/);
+            episodeData.pop();
             episodeData.forEach((episode, i) => {
             let episodeArr;
 
