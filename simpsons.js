@@ -5,7 +5,7 @@ $(document).ready(() => {
     let headers;
 
     $.ajax({
-        url:"simpsons_data.csv",
+        url:"./assets/csv/simpsons_data.csv",
         dataType:"text",
         success:function(data)
         {

@@ -16,7 +16,7 @@ h5 {
 
 html {
     width: 100%;
-    background-image: url("./assets/sky-background.jpg");
+    background-image: url("../images/sky-background.jpg");
     background-attachment: fixed;
     background-position: center; 
     background-repeat: repeat-y;
